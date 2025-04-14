@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Melodies - MelodyStream</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MeloStream</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active-nav" href="telugu-melodies.html">Telugu Melodies</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Telugu Melodies</h1>
+            <p class="hero-subtitle">Top 10 soulful Telugu songs that touch your heart</p>
+        </div>
+    </section>
+
+    <!-- Music Section - Modified for local files -->
+    <section class="py-5">
+        <div class="container py-4">
+            <a href="index.html" class="btn btn-outline-primary back-btn">
+                <i class="fas fa-arrow-left me-2"></i> Back to Home
+            </a>
+            
+            <h2 class="text-center section-title">Popular Telugu Melody Songs</h2>
+            
+            <div class="row">
+                <!-- Song 1 - Local File Example -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://c.saavncdn.com/184/Nuvvunte-Naa-Jathagaa-Lofi-Flip--Telugu-2021-20211001132802-500x500.jpg" alt="Nuvvunte Naa Jathaga" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Nuvvunte Naa Jathaga</h4>
+                                <p class="music-artist">Anurag Kulkarni</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Nuvvunte Naa Jathaga', 
+                                        'Anurag Kulkarni', 
+                                        'https://c.saavncdn.com/184/Nuvvunte-Naa-Jathagaa-Lofi-Flip--Telugu-2021-20211001132802-500x500.jpg',
+                                        'audios/Nuvvunte_Na_Jathaga.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kZkozWE-coEm_BDMo0FVfqNa62O6PSMbYw&s" alt="Ninnu Chuse Anandamlo" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Ninnu Chuse Anandamlo</h4>
+                                <p class="music-artist">Sid Sriram</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Ninnu Chuse Anandamlo', 
+                                        'Sid Sriram', 
+                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kZkozWE-coEm_BDMo0FVfqNa62O6PSMbYw&s',
+                                        'audios/Ninnu-Chuse-Anandamlo.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://i.ytimg.com/vi/qC_POFCsqnY/sddefault.jpg" alt="Yedurangula Vaana" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Yedurangula Vaana</h4>
+                                <p class="music-artist">Sid Sriram</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Yedurangula Vaana', 
+                                        'Sid Sriram', 
+                                        'https://i.ytimg.com/vi/qC_POFCsqnY/sddefault.jpg',
+                                        'audios/Yedurangula_Vaana.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://images.filmibeat.com/te/img/2020/03/uppwena-1583248629.jpg" alt="Nee Kannu Neeli Samudram" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Nee Kannu Neeli Samudram</h4>
+                                <p class="music-artist">Sid Sriram</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Nee Kannu Neeli Samudram', 
+                                        'Sid Sriram', 
+                                        'https://images.filmibeat.com/te/img/2020/03/uppwena-1583248629.jpg',
+                                        'audios/nee-kannu-neeli-samudram.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://naasongs.com.co/wp-content/uploads/2019/09/Ala-Vaikunthapurramuloo-2019jpeg.jpg" alt="Samajavaragamana" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Samajavaragamana</h4>
+                                <p class="music-artist">Sid Sriram</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Samajavaragamana', 
+                                        'Sid Sriram', 
+                                        'https://naasongs.com.co/wp-content/uploads/2019/09/Ala-Vaikunthapurramuloo-2019jpeg.jpg',
+                                        'audios/samajavaragamana.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://www.naasongs.to/wp-content/uploads/2019/12/Ala-Vaikuntapuramlo-Telugu-2019-Buttabomma.jpg" alt="Butta Bomma" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Butta Bomma</h4>
+                                <p class="music-artist">Armaan Malik</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Butta Bomma', 
+                                        'Armaan Malik', 
+                                        'https://www.naasongs.to/wp-content/uploads/2019/12/Ala-Vaikuntapuramlo-Telugu-2019-Buttabomma.jpg',
+                                        'audios/butta-bomma.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://pendujatt.com.se/uploads/album/baby-vijai-bulganin.webp" alt="O Rendu Prema Meghaalila" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">O Rendu Prema Meghaalila</h4>
+                                <p class="music-artist">Anurag Kulkarni</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'O Rendu Prema Meghaalila', 
+                                        'Anurag Kulkarni', 
+                                        'https://pendujatt.com.se/uploads/album/baby-vijai-bulganin.webp',
+                                        'audios/o-rendu-prema.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Song 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://a10.gaanacdn.com/gn_img/albums/mGjKr1b6zX/jKrPMX1mW6/size_m.jpg" alt="Naa Madhi" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Naa Madhi</h4>
+                                <p class="music-artist">Dhanunjay, Anurag Kulkarni</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Naa Madhi', 
+                                        'Dhanunjay, Anurag Kulkarni', 
+                                        'https://a10.gaanacdn.com/gn_img/albums/mGjKr1b6zX/jKrPMX1mW6/size_m.jpg',
+                                        'audios/naa-madhi.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 9 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://naasongs.com.co/wp-content/uploads/2018/08/Geetha-Govindam-jpeg-1.jpg" alt="Inkem Inkem Inkem Kaavaale" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Inkem Inkem Inkem Kaavaale</h4>
+                                <p class="music-artist">Sid Sriram</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Inkem Inkem Inkem Kaavaale', 
+                                        'Sid Sriram', 
+                                        'https://naasongs.com.co/wp-content/uploads/2018/08/Geetha-Govindam-jpeg-1.jpg',
+                                        'audios/inkem-inkem.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song 10 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="music-card">
+                        <img src="https://naasongs.com.co/wp-content/uploads/2018/05/Legend-2014jpeg.jpg" alt="Nee Kanti Choopulo" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Nee Kanti Choopulo</h4>
+                                <p class="music-artist">Anurag Kulkarni</p>
+                            </div>
+                            <button class="play-btn" 
+                                    onclick="playSong(
+                                        'Nee Kanti Choopulo', 
+                                        'Anurag Kulkarni', 
+                                        'https://naasongs.com.co/wp-content/uploads/2018/05/Legend-2014jpeg.jpg',
+                                        'audios/nee-kanti-choopulo.mp3'
+                                    )">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Bar -->
+    <div class="player-bar" id="playerBar" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="player-info">
+                        <img src="" alt="Now Playing" class="player-cover" id="playerCover">
+                        <div>
+                            <h6 class="player-title" id="playerTitle">Song Title</h6>
+                            <p class="player-artist" id="playerArtist">Artist Name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="player-controls">
+                        <button class="control-btn" id="prevBtn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-btn play-pause-btn" id="playPauseBtn">
+                            <i class="fas fa-play" id="playPauseIcon"></i>
+                        </button>
+                        <button class="control-btn" id="nextBtn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                    <div class="progress-container mt-2">
+                        <span class="progress-time" id="currentTime">0:00</span>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <span class="progress-time" id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <div class="volume-container">
+                        <i class="fas fa-volume-up volume-icon" id="volumeIcon"></i>
+                        <input type="range" class="form-range volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Player functionality
+        const playerBar = document.getElementById('playerBar');
+        const playerTitle = document.getElementById('playerTitle');
+        const playerArtist = document.getElementById('playerArtist');
+        const playerCover = document.getElementById('playerCover');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progress = document.getElementById('progress');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeIcon = document.getElementById('volumeIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+        
+        // Create audio element
+        const audio = new Audio();
+        let isPlaying = false;
+        let currentSongIndex = 0;
+        let lastVolume = 0.7;
+        
+        // Telugu melody songs data with LOCAL files
+        const songs = [
+            {
+                title: 'Nuvvunte Naa Jathaga',
+                artist: 'Anurag Kulkarni',
+                cover: 'https://c.saavncdn.com/184/Nuvvunte-Naa-Jathagaa-Lofi-Flip--Telugu-2021-20211001132802-500x500.jpg',
+                src: 'audios/Nuvvunte_Na_Jathaga.mp3'
+            },
+            {
+                title: 'Ninnu Chuse Anandamlo',
+                artist: 'Sid Sriram',
+                cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kZkozWE-coEm_BDMo0FVfqNa62O6PSMbYw&s',
+                src: 'audios/Ninnu-Chuse-Anandamlo.mp3'
+            },
+            {
+                title: 'Yedurangula Vaana',
+                artist: 'Sid Sriram',
+                cover: 'https://i.ytimg.com/vi/qC_POFCsqnY/sddefault.jpg',
+                src: 'audios/Yedurangula_Vaana.mp3'
+            },
+            {
+                title: 'Nee Kannu Neeli Samudram',
+                artist: 'Sid Sriram',
+                cover: 'https://images.filmibeat.com/te/img/2020/03/uppwena-1583248629.jpg',
+                src: 'audios/nee-kannu-neeli-samudram.mp3'
+            },
+            {
+                title: 'Samajavaragamana',
+                artist: 'Sid Sriram',
+                cover: 'https://naasongs.com.co/wp-content/uploads/2019/09/Ala-Vaikunthapurramuloo-2019jpeg.jpg',
+                src: 'audios/samajavaragamana.mp3'
+            },
+            {
+                title: 'Butta Bomma',
+                artist: 'Armaan Malik',
+                cover: 'https://www.naasongs.to/wp-content/uploads/2019/12/Ala-Vaikuntapuramlo-Telugu-2019-Buttabomma.jpg',
+                src: 'audios/butta-bomma.mp3'
+            },
+            {
+                title: 'O Rendu Prema Meghaalila',
+                artist: 'Anurag Kulkarni',
+                cover: 'https://pendujatt.com.se/uploads/album/baby-vijai-bulganin.webp',
+                src: 'audios/o-rendu-prema.mp3'
+            },
+            {
+                title: 'Naa Madhi',
+                artist: 'Dhanunjay, Anurag Kulkarni',
+                cover: 'https://a10.gaanacdn.com/gn_img/albums/mGjKr1b6zX/jKrPMX1mW6/size_m.jpg',
+                src: 'audios/naa-madhi.mp3'
+            },
+            {
+                title: 'Inkem Inkem Inkem Kaavaale',
+                artist: 'Sid Sriram',
+                cover: 'https://naasongs.com.co/wp-content/uploads/2018/08/Geetha-Govindam-jpeg-1.jpg',
+                src: 'audios/inkem-inkem.mp3'
+            },
+            {
+                title: 'Nee Kanti Choopulo',
+                artist: 'Anurag Kulkarni',
+                cover: 'https://naasongs.com.co/wp-content/uploads/2018/05/Legend-2014jpeg.jpg',
+                src: 'audios/nee-kanti-choopulo.mp3'
+            }
+        ];
+        
+        // Modified playSong function to handle local files
+        function playSong(title, artist, cover, filePath) {
+            // Find the song in the array
+            const songIndex = songs.findIndex(song => 
+                song.title === title && 
+                song.artist === artist
+            );
+            
+            if (songIndex !== -1) {
+                currentSongIndex = songIndex;
+                loadSong(songs[songIndex]);
+            } else {
+                // Handle direct play with parameters
+                playerTitle.textContent = title;
+                playerArtist.textContent = artist;
+                playerCover.src = cover;
+                audio.src = filePath;
+                audio.play();
+                isPlaying = true;
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+            }
+            
+            // Show player bar if hidden
+            playerBar.style.display = 'block';
+        }
+        
+
+        // Load song
+        function loadSong(song) {
+            playerTitle.textContent = song.title;
+            playerArtist.textContent = song.artist;
+            playerCover.src = song.cover;
+            audio.src = song.src;
+            
+            // Play the song
+            audio.play();
+            isPlaying = true;
+            playPauseIcon.classList.replace('fa-play', 'fa-pause');
+        }
+        
+        // Play/pause
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
+            } else {
+                audio.play();
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Previous song
+        function prevSong() {
+            currentSongIndex--;
+            if (currentSongIndex < 0) {
+                currentSongIndex = songs.length - 1;
+            }
+            loadSong(songs[currentSongIndex]);
+        }
+        
+        // Next song
+        function nextSong() {
+            currentSongIndex++;
+            if (currentSongIndex > songs.length - 1) {
+                currentSongIndex = 0;
+            }
+            loadSong(songs[currentSongIndex]);
+        }
+        
+        // Update progress bar
+        function updateProgress(e) {
+            const { duration, currentTime } = e.srcElement;
+            const progressPercent = (currentTime / duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            
+            // Update time display
+            const durationMinutes = Math.floor(duration / 60);
+            let durationSeconds = Math.floor(duration % 60);
+            if (durationSeconds < 10) {
+                durationSeconds = `0${durationSeconds}`;
+            }
+            
+            // Delay switching duration to avoid NaN
+            if (durationSeconds) {
+                durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+            }
+            
+            const currentMinutes = Math.floor(currentTime / 60);
+            let currentSeconds = Math.floor(currentTime % 60);
+            if (currentSeconds < 10) {
+                currentSeconds = `0${currentSeconds}`;
+            }
+            currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
+        }
+        
+        // Set progress bar
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        }
+        
+        // Set volume
+        function setVolume() {
+            audio.volume = volumeSlider.value;
+            lastVolume = audio.volume;
+            
+            // Change icon based on volume
+            if (audio.volume === 0) {
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-mute');
+            } else if (audio.volume < 0.5) {
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-down');
+                volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-down');
+            } else {
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-up');
+                volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+            }
+        }
+        
+        // Toggle mute
+        function toggleMute() {
+            if (audio.volume > 0) {
+                lastVolume = audio.volume;
+                audio.volume = 0;
+                volumeSlider.value = 0;
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-mute');
+            } else {
+                audio.volume = lastVolume;
+                volumeSlider.value = lastVolume;
+                if (lastVolume < 0.5) {
+                    volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-down');
+                } else {
+                    volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+                }
+            }
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlay);
+        prevBtn.addEventListener('click', prevSong);
+        nextBtn.addEventListener('click', nextSong);
+        audio.addEventListener('timeupdate', updateProgress);
+        audio.addEventListener('ended', nextSong);
+        progressBar.addEventListener('click', setProgress);
+        volumeSlider.addEventListener('input', setVolume);
+        volumeIcon.addEventListener('click', toggleMute);
+        
+        // Initialize volume
+        audio.volume = volumeSlider.value;
+    </script>
+</body>
+</html>

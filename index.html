@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyStream - Music Streaming Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MeloStream</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active-nav" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#music">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#podcasts">Podcasts</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item dropdown" id="accountDropdown">
+                        <ul id="accountMenu">
+                          <button class="btn btn-outline-light me-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt me-2"></i>Login</a> </button>  
+                        <button class="btn btn-outline-light"> <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus me-2"></i>Register</a> </button>  
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Stream Your Favorite Music</h1>
+                    <p class="hero-subtitle">Millions of songs and podcasts. No credit card needed.</p>
+                    <div class="d-flex">
+                        <button class="btn btn-light btn-lg me-3" onclick="window.location.href='telugumelody.html'">Get MelodyStream Free</button>
+                        <button class="btn btn-outline-light btn-lg" onclick="window.location.href='Premium_plans.html'">Go Premium <span class="badge-premium">30 days free</span></button>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music" class="img-fluid rounded-3 pulse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Why Choose MeloStream?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Unlimited Music</h3>
+                        <p>Access to over 70 million songs with new releases added every week. Listen to your favorite artists anytime, anywhere.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-podcast"></i>
+                        </div>
+                        <h3>Podcasts</h3>
+                        <p>Discover and listen to podcasts on any topic. From true crime to comedy, we have something for everyone.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3>Radio Stations</h3>
+                        <p>Enjoy curated radio stations for every mood and activity. Perfect for when you don't know what to listen to.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section class="py-5 bg-light" id="music">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Popular Music</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Summer Vibes</h4>
+                                <p class="music-artist">DJ Sunshine</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Summer Vibes', 'DJ Sunshine', 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Midnight Dreams</h4>
+                                <p class="music-artist">Luna Band</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Midnight Dreams', 'Luna Band', 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Electric Feel</h4>
+                                <p class="music-artist">The Neon</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Electric Feel', 'The Neon', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Blue</h4>
+                                <p class="music-artist">City Lights</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Blue', 'DJ Sunshine', 'https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Perfect</h4>
+                                <p class="music-artist">Sunny Ray</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Perfect', 'Luna Band', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Shape-of-You</h4>
+                                <p class="music-artist">Smooth Cats</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Shape-of-You', 'The Neon', 'https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">I-Wanna-Be-Yours</h4>
+                                <p class="music-artist">Philharmonic</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('I-Wanna-Be-Yours', 'The Neon', 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="music-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Music Cover" class="music-cover">
+                        <div class="music-info d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="music-title">Rock Anthems</h4>
+                                <p class="music-artist">Guitar Heroes</p>
+                            </div>
+                            <button class="play-btn" onclick="playSong('Rock Anthems', 'Guitar Heroes', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Podcasts Section -->
+    <section class="py-5" id="podcasts">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Trending Podcasts</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">Tech Today</h4>
+                            <p class="podcast-author">By Digital Insights</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>1.2M listens</span>
+                                <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">Mystery Hour</h4>
+                            <p class="podcast-author">By Unknown Origins</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>890K listens</span>
+                                <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">Business Insights</h4>
+                            <p class="podcast-author">By Market Leaders</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>750K listens</span>
+                                <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">Health Matters</h4>
+                            <p class="podcast-author">By Wellness Experts</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>680K listens</span>
+                                <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">Comedy Hour</h4>
+                            <p class="podcast-author">By Laugh Factory</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>1.5M listens</span>
+                                <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="podcast-card">
+                        <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4 class="podcast-title">History Uncovered</h4>
+                            <p class="podcast-author">By Time Travelers</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="fas fa-headphones me-2"></i>520K listens</span>
+                                <button class="btn btn-sm btn-outline-primary"onclick="window.location.href='podcast_plans.html'">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">MelodyStream</h5>
+                    <p>The best music streaming service for discovering and sharing music from around the world.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Company</h5>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Press</a>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Support</h5>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Community</a>
+                    <a href="#" class="footer-link">Guidelines</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <img src="logo.png" alt="MelodyStream Logo" class="footer-logo" style="width: 300px; height: auto;">
+                </div>
+            </div>
+            <div class="text-center copyright">
+                <p>&copy; 2023 MelodyStream. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player Bar -->
+    <div class="player-bar" id="playerBar" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="player-info">
+                        <img src="" alt="Now Playing" class="player-cover" id="playerCover">
+                        <div>
+                            <h6 class="player-title" id="playerTitle">Song Title</h6>
+                            <p class="player-artist" id="playerArtist">Artist Name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="player-controls">
+                        <button class="control-btn" id="prevBtn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-btn play-pause-btn" id="playPauseBtn">
+                            <i class="fas fa-play" id="playPauseIcon"></i>
+                        </button>
+                        <button class="control-btn" id="nextBtn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                    <div class="progress-container mt-2">
+                        <span class="progress-time" id="currentTime">0:00</span>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <span class="progress-time" id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <div class="volume-container">
+                        <i class="fas fa-volume-up volume-icon" id="volumeIcon"></i>
+                        <input type="range" class="form-range volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Player functionality
+        const playerBar = document.getElementById('playerBar');
+        const playerTitle = document.getElementById('playerTitle');
+        const playerArtist = document.getElementById('playerArtist');
+        const playerCover = document.getElementById('playerCover');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progress = document.getElementById('progress');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeIcon = document.getElementById('volumeIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+        
+        // Create audio element
+        const audio = new Audio();
+        let isPlaying = false;
+        let currentSongIndex = 0;
+        
+        // Sample songs data
+        const songs = [
+            {
+                title: 'Summer Vibes',
+                artist: 'DJ Sunshine',
+                cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
+            },
+            {
+                title: 'Midnight Dreams',
+                artist: 'Luna Band',
+                cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
+            },
+            {
+                title: 'Electric Feel',
+                artist: 'The Neon',
+                cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'
+            },
+            {
+                title: 'Blue',
+                artist: 'DJ Sunshine',
+                cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'audios/Blue.mp3'
+            },
+            {
+                title: 'Perfect',
+                artist: 'Luna Band',
+                cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'audios/Perfect.mp3'
+            },
+            {
+                title: 'Shape-of-You',
+                artist: 'The Neon',
+                cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'audios/Shape-of-You.mp3'
+            },
+            {
+                title: 'I-Wanna-Be-Yours',
+                artist: 'The Neon',
+                cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                src: 'audios/I-Wanna-Be-Yours.mp3'
+            }
+        ];        
+        // Play song function
+        function playSong(title, artist, cover) {
+            // Find the song in the array
+            const songIndex = songs.findIndex(song => song.title === title && song.artist === artist);
+            
+            if (songIndex !== -1) {
+                currentSongIndex = songIndex;
+                loadSong(songs[songIndex]);
+                
+                // Show player bar if hidden
+                playerBar.style.display = 'block';
+                
+                // Scroll to player bar
+                playerBar.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Load song
+        function loadSong(song) {
+            playerTitle.textContent = song.title;
+            playerArtist.textContent = song.artist;
+            playerCover.src = song.cover;
+            audio.src = song.src;
+            
+            // Play the song
+            audio.play();
+            isPlaying = true;
+            playPauseIcon.classList.replace('fa-play', 'fa-pause');
+        }
+        
+        // Play/pause
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
+            } else {
+                audio.play();
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Previous song
+        function prevSong() {
+            currentSongIndex--;
+            if (currentSongIndex < 0) {
+                currentSongIndex = songs.length - 1;
+            }
+            loadSong(songs[currentSongIndex]);
+        }
+        
+        // Next song
+        function nextSong() {
+            currentSongIndex++;
+            if (currentSongIndex > songs.length - 1) {
+                currentSongIndex = 0;
+            }
+            loadSong(songs[currentSongIndex]);
+        }
+        
+        // Update progress bar
+        function updateProgress(e) {
+            const { duration, currentTime } = e.srcElement;
+            const progressPercent = (currentTime / duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            
+            // Update time display
+            const durationMinutes = Math.floor(duration / 60);
+            let durationSeconds = Math.floor(duration % 60);
+            if (durationSeconds < 10) {
+                durationSeconds = `0${durationSeconds}`;
+            }
+            
+            // Delay switching duration to avoid NaN
+            if (durationSeconds) {
+                durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+            }
+            
+            const currentMinutes = Math.floor(currentTime / 60);
+            let currentSeconds = Math.floor(currentTime % 60);
+            if (currentSeconds < 10) {
+                currentSeconds = `0${currentSeconds}`;
+            }
+            currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
+        }
+        
+        // Set progress bar
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        }
+        
+        // Set volume
+        function setVolume() {
+            audio.volume = volumeSlider.value;
+            
+            // Change icon based on volume
+            if (audio.volume === 0) {
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-mute');
+            } else if (audio.volume < 0.5) {
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-down');
+                volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-down');
+            } else {
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-up');
+                volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+            }
+        }
+        
+        // Toggle mute
+        function toggleMute() {
+            if (audio.volume > 0) {
+                lastVolume = audio.volume;
+                audio.volume = 0;
+                volumeSlider.value = 0;
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
+                volumeIcon.classList.replace('fa-volume-down', 'fa-volume-mute');
+            } else {
+                audio.volume = lastVolume;
+                volumeSlider.value = lastVolume;
+                if (lastVolume < 0.5) {
+                    volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-down');
+                } else {
+                    volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+                }
+            }
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlay);
+        prevBtn.addEventListener('click', prevSong);
+        nextBtn.addEventListener('click', nextSong);
+        audio.addEventListener('timeupdate', updateProgress);
+        audio.addEventListener('ended', nextSong);
+        progressBar.addEventListener('click', setProgress);
+        volumeSlider.addEventListener('input', setVolume);
+        volumeIcon.addEventListener('click', toggleMute);
+        
+        // Initialize volume
+        audio.volume = volumeSlider.value;
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active-nav');
+                });
+                
+                // Add active class to clicked nav link
+                this.classList.add('active-nav');
+                
+                // Scroll to target
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}`);
+                    this.value = '';
+                }
+            }
+        });
+        
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>

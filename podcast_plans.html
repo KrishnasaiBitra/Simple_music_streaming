@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head content as your index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyStream Premium - Choose Your Plan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Same style section as your index.html -->
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --success-color: #00b894;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #5649c0;
+            border-color: #5649c0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .music-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .music-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .music-info {
+            padding: 20px;
+        }
+        
+        .music-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .music-artist {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .play-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .play-btn:hover {
+            background-color: #5649c0;
+            transform: scale(1.1);
+        }
+        
+        .podcast-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .podcast-cover {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .podcast-info {
+            padding: 20px;
+        }
+        
+        .podcast-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .podcast-author {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .radio-station {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .radio-station:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .radio-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .radio-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .radio-genre {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .upload-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #adb5bd;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            border-top: 1px solid #495057;
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        .player-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        
+        .player-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .player-cover {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .player-title {
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .player-artist {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+        
+        .player-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .control-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .play-pause-btn {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .progress-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .progress-time {
+            font-size: 0.8rem;
+            color: #6c757d;
+            min-width: 40px;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin: 0 10px;
+            flex-grow: 1;
+            cursor: pointer;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            width: 0%;
+        }
+        
+        .volume-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .volume-icon {
+            color: var(--dark-color);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .volume-slider {
+            width: 100px;
+            cursor: pointer;
+        }
+        
+        .active-nav {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .search-input {
+            padding: 8px 15px 8px 40px;
+            border-radius: 50px;
+            border: 1px solid #dee2e6;
+            width: 200px;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            width: 250px;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.3s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+        }
+        
+        .badge-premium {
+            background-color: var(--success-color);
+            color: white;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .search-box {
+                margin-left: 0;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .search-input:focus {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .player-info {
+                display: none;
+            }
+            
+            .player-controls {
+                justify-content: space-between;
+            }
+        }
+        
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MeloStream</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#music">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#podcasts">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#radio">Radio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#upload">Upload</a>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="form-control search-input" placeholder="Search...">
+                </div>
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Favorites</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Premium Plans Section -->
+    <section class="py-5 hero-section">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="hero-title">Choose Your Premium Plan</h1>
+                    <p class="hero-subtitle">Try Premium free for 30 days. Cancel anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="justify-content-center">
+        <div class="container center py-5">
+            <div class="row">
+
+                <!-- Premium Plan 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="text-center mb-4">
+                            <h3>Podcast Pro</h3>
+                            <h2 class="my-3">₹ 300 <small class="text-muted">/month</small></h2>
+                            <p>Perfect for podcast enthusiasts</p>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Ad-free podcasts</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Unlimited podcast downloads</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Early access to new shows</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Exclusive podcast content</li>
+                            <li class="mb-3"><i class="fas fa-times-circle text-secondary me-2"></i> <span class="text-muted">Ads in music section</span></li>
+                            <li class="mb-3"><i class="fas fa-times-circle text-secondary me-2"></i> <span class="text-muted">No music downloads</span></li>
+                            <li class="mb-3"><i class="fas fa-times-circle text-secondary me-2"></i> <span class="text-muted">Standard audio quality</span></li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 btn-lg">Get Started</button>
+                        <p class="text-center mt-2 small">30-day free trial included</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="feature-card">
+                        <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        How does the free trial work?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Your free trial gives you full access to all Premium features for 30 days. If you don't cancel before the trial ends, your subscription will automatically continue at the regular price.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        Can I switch plans later?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes, you can switch between plans at any time. Your new plan will take effect at your next billing date.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        How do I cancel my subscription?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        You can cancel anytime in your account settings. Your subscription will remain active until the end of your current billing period.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">MelodyStream</h5>
+                    <p class="text-muted">The best music streaming service for discovering and sharing music from around the world.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Company</h5>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Press</a>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Support</h5>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Community</a>
+                    <a href="#" class="footer-link">Guidelines</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                </div>
+               
+            </div>
+            <div class="text-center copyright">
+                <p>&copy; 2023 MelodyStream. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player Bar (same as index.html) -->
+    <div class="player-bar" id="playerBar" style="display: none;">
+        <!-- Same player bar content as index.html -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Same JavaScript as your index.html
+        // Player functionality
+        const playerBar = document.getElementById('playerBar');
+        // ... rest of your JavaScript
+    </script>
+</body>
+</html>

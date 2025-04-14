@@ -1,0 +1,345 @@
+:root {
+    --primary-color: #4a148c;
+    --secondary-color: #7b1fa2;
+    --accent-color: #e91e63;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 80px;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: white !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    margin: 0 5px;
+}
+
+.nav-link:hover, .active-nav {
+    color: white !important;
+}
+
+.active-nav {
+    font-weight: 600;
+    position: relative;
+}
+
+.active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px 3px 0 0;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.badge-premium {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(233, 30, 99, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.music-card, .podcast-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.music-card:hover, .podcast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.music-cover, .podcast-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.music-info, .podcast-info {
+    padding: 15px;
+}
+
+.music-title, .podcast-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.music-artist, .podcast-author {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #d81b60;
+    transform: scale(1.1);
+}
+
+
+
+.footer {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-link {
+    display: block;
+    color: #adb5bd;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #adb5bd;
+}
+
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+}
+
+.player-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.player-title {
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.player-artist {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #495057;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    color: var(--accent-color);
+}
+
+.play-pause-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.play-pause-btn:hover {
+    transform: scale(1.1);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 5px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    width: 0%;
+}
+
+.progress-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+}
+
+.volume-icon {
+    margin-right: 10px;
+    color: #495057;
+}
+
+.volume-slider {
+    width: 100px;
+}
+
+
