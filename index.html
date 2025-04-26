@@ -27,14 +27,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#podcasts">Podcasts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.php">Feedback</a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item dropdown" id="accountDropdown">
                         <ul id="accountMenu">
-                          <button class="btn btn-outline-light me-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt me-2"></i>Login</a> </button>  
-                        <button class="btn btn-outline-light"> <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus me-2"></i>Register</a> </button>  
+                                <a href="login.php" class="btn btn-outline-light me-3">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                                </a>
+                                <a href="register.php" class="btn btn-outline-light">
+                                    <i class="fas fa-user-plus me-2"></i>Register
+                                </a>
                         </ul>
+                        
                     </li>
                 </ul>
             </div>
@@ -49,7 +57,7 @@
                     <h1 class="hero-title">Stream Your Favorite Music</h1>
                     <p class="hero-subtitle">Millions of songs and podcasts. No credit card needed.</p>
                     <div class="d-flex">
-                        <button class="btn btn-light btn-lg me-3" onclick="window.location.href='telugumelody.html'">Get MelodyStream Free</button>
+                        <button class="btn btn-light btn-lg me-3" onclick="window.location.href='telugumelody.html'">Telugu Melodies Free</button>
                         <button class="btn btn-outline-light btn-lg" onclick="window.location.href='Premium_plans.html'">Go Premium <span class="badge-premium">30 days free</span></button>
                     </div>
                 </div>
@@ -303,49 +311,55 @@
                 </div>
             </div>
 
+            <div class="col-12 my-4 text-center">
+                <a href="feedback.php" class="btn btn-lg btn-warning px-5">
+                    <i class="fas fa-comment-dots me-2"></i>Give Feedback
+                </a>
+            </div>
+            
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">MelodyStream</h5>
-                    <p>The best music streaming service for discovering and sharing music from around the world.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">Company</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">Careers</a>
-                    <a href="#" class="footer-link">Press</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Contact</a>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">Support</h5>
-                    <a href="#" class="footer-link">Help Center</a>
-                    <a href="#" class="footer-link">Community</a>
-                    <a href="#" class="footer-link">Guidelines</a>
-                    <a href="#" class="footer-link">Privacy</a>
-                    <a href="#" class="footer-link">Terms</a>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <img src="logo.png" alt="MelodyStream Logo" class="footer-logo" style="width: 300px; height: auto;">
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-3">
+                <h5 class="text-uppercase">MeloStream</h5>
+                <p class="small">Discover and share the best music and podcasts from around the world.</p>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-spotify"></i></a>
                 </div>
             </div>
-            <div class="text-center copyright">
-                <p>&copy; 2023 MelodyStream. All rights reserved.</p>
+
+            <div class="col-md-4 mb-3">
+                <h6 class="text-uppercase">Company</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="#music" class="text-white text-decoration-none">Music</a></li>
+                    <li><a href="#podcasts" class="text-white text-decoration-none">Podcast</a></li>
+                    <li><a href="feedback.php" class="text-white text-decoration-none">Feedback</a></li>
+                </ul>
+            </div>
+
+           
+
+            <div class="col-md-4 mb-3 text-center text-md-start">
+                <img src="logo.png" alt="MelodyStream Logo" class="img-fluid" style="max-width: 200px;">
             </div>
         </div>
-    </footer>
+
+        <hr class="border-secondary my-4">
+
+        <div class="text-center small">
+            <p class="mb-0">&copy; 2025 MeloStream. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Player Bar -->
     <div class="player-bar" id="playerBar" style="display: none;">

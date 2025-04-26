@@ -460,65 +460,7 @@
             border-radius: 50px;
             font-size: 0.8rem;
         }
-        
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .search-box {
-                margin-left: 0;
-                margin-top: 15px;
-                width: 100%;
-            }
-            
-            .search-input {
-                width: 100%;
-            }
-            
-            .search-input:focus {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 0;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .player-info {
-                display: none;
-            }
-            
-            .player-controls {
-                justify-content: space-between;
-            }
-        }
-        
 
-        /* Animation classes */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
     </style>
 </head>
 <body>
@@ -540,17 +482,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#podcasts">Podcasts</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#radio">Radio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#upload">Upload</a>
-                    </li>
+
                 </ul>
-                <div class="search-box">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="form-control search-input" placeholder="Search...">
-                </div>
+
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
@@ -658,43 +592,46 @@
     </section>
 
     <!-- Footer (same as index.html) -->
-    <footer class="footer">
+    <footer class="bg-dark text-white pt-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">MelodyStream</h5>
-                    <p class="text-muted">The best music streaming service for discovering and sharing music from around the world.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">MeloStream</h5>
+                    <p class="small">Discover and share the best music and podcasts from around the world.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-spotify"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">Company</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">Careers</a>
-                    <a href="#" class="footer-link">Press</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Contact</a>
+    
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-uppercase">Company</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#music" class="text-white text-decoration-none">Music</a></li>
+                        <li><a href="#podcasts" class="text-white text-decoration-none">Podcast</a></li>
+                        <li><a href="feedback.php" class="text-white text-decoration-none">Feedback</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="footer-title">Support</h5>
-                    <a href="#" class="footer-link">Help Center</a>
-                    <a href="#" class="footer-link">Community</a>
-                    <a href="#" class="footer-link">Guidelines</a>
-                    <a href="#" class="footer-link">Privacy</a>
-                    <a href="#" class="footer-link">Terms</a>
-                </div>
+    
                
+    
+                <div class="col-md-4 mb-3 text-center text-md-start">
+                    <img src="logo.png" alt="MelodyStream Logo" class="img-fluid" style="max-width: 200px;">
+                </div>
             </div>
-            <div class="text-center copyright">
-                <p>&copy; 2023 MelodyStream. All rights reserved.</p>
+    
+            <hr class="border-secondary my-4">
+    
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2025 MeloStream. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    
 
     <!-- Player Bar (same as index.html) -->
     <div class="player-bar" id="playerBar" style="display: none;">

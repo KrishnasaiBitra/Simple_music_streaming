@@ -1,12 +1,12 @@
 <?php
 session_start();
-include 'database.php';  // Database connection
+include 'database.php';  // Ensure $conn is your active DB connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Query to check if user exists with the given email
+    // Step 1: Check if user exists
     $query = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $email);
@@ -14,13 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // User found, verify password
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            // Successful login
+            // Login successful
+            session_regenerate_id(true);
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['username'];
-            echo 'Login successful';
+
+            // Optional: Insert login record into students table
+            $insert = $conn->prepare("INSERT INTO students (email, password) VALUES (?, ?)");
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // Only if storing!
+            $insert->bind_param("ss", $email, $hashedPassword);
+            $insert->execute(); // Optional, remove if not needed
+
             header('Location: index.html');
+            exit;
         } else {
             echo 'Invalid credentials';
         }
@@ -29,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -42,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body class="bg-light">
 
-<!-- Modal for login -->
+<!-- Model for login -->
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
