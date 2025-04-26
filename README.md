@@ -1,4 +1,5 @@
 🎵 MeloStream
+
 MeloStream is a full-stack music streaming web application designed to offer users seamless access to songs and podcasts, with a special focus on curated Telugu music.
 Built with a secure backend, a responsive frontend, and user-friendly navigation, it delivers personalized streaming experiences.
 
